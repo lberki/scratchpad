@@ -1,6 +1,7 @@
 "use strict";
 
 let FILE_LIST = [
+    "/",
     "/index.html",
     "/scratchpad.css",
     "/scratchpad.js",
