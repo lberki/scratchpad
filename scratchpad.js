@@ -4,6 +4,8 @@
 // - Tweak timeouts (e.g. service worker staling) for production
 // - Figure out if we what prod and dev to be any different
 // - Somehow indicate if offline mode is properly installed
+// - favicon
+// - Shortcut for New/Delete buttons (or make them focusable or something)
 let itemIds = [];
 let selectedItem = null;
 let selectedId = null;
