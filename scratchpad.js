@@ -139,6 +139,15 @@ function updateContent() {
   }
 }
 
+function initializeDatabase() {
+  log("initializing database on first startup");
+  let initialId = generateId();
+  localStorage.setItem("items", JSON.stringify([initialId]));
+  localStorage.setItem("item:" + initialId, JSON.stringify({
+    title: "First item",
+    content: "Type something here."}));
+}
+
 function refreshItemList() {
   itemIds = JSON.parse(localStorage.getItem("items"));
   let itemsNode = document.querySelector(".items_pane");
@@ -191,6 +200,11 @@ function deleteCurrentItem() {
 }
 
 function onLoad() {
+  if (localStorage.getItem("items") === null) {
+    // First startup. Initialize the local storage with something reasonable.
+    initializeDatabase();
+  }
+
   navigator.serviceWorker.register("service-worker.js", { scope: "./" })
       .then(r => {
         log("service worker installed: " + r);
@@ -198,7 +212,9 @@ function onLoad() {
       .catch(e => {
         log("could not install service worker: " + e);
       });
+
   refreshItemList();
+  selectItem(itemIds[0]);
 }
 
 window.addEventListener("load", onLoad);
