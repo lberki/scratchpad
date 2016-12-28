@@ -91,6 +91,9 @@ function markChangesAsCommitted() {
 }
 function selectItem(id) {
   if (id === selectedId) {
+    let contentElement = document.querySelector(".content");
+    contentElement.select();
+    contentElement.focus();
     return;
   }
   
