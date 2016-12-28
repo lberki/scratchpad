@@ -55,7 +55,7 @@ function fetchEvent2(e) {
   e.respondWith(spawn(function *() {
     if (!path in cachedFiles) {
       log("uncached path " + path);
-      yield fetch(e.request);
+      return fetch(e.request);
     }
     
     if (cachedFiles[path].stale) {
