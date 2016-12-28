@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <title>
+    Scratchpad
+  </title>
+  <head>
+    <link rel="stylesheet" type="text/css" href="scratchpad.css"></link>
+    <script type="text/javascript" src="scratchpad.js"></script>
+  </head>
+  <body>
+  <div class="page_title">
+    Scratchpad
+    <div class="changed_marker" style="visibility: hidden">*</div>
+  </div>
+  <div class="main">
+    <div class="main_container">
+      <div class="items_pane">
+      </div>
+      <div class="contents_pane">
+        <input type="text" class="title" value="" tabindex="1" oninput="itemChanged()"/>
+        <textarea class="content" rows=15 tabindex="2" oninput="itemChanged()"></textarea>
+        <div class="buttons_pane">
+          <div class="button" onclick="deleteCurrentItem()">
+            Delete
+          </div>
+          <div class="button" onclick="newItem()">
+            New
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
