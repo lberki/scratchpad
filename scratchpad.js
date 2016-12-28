@@ -3,6 +3,7 @@
 // - Figure out how to update the web page quickly during development
 // - Tweak timeouts (e.g. service worker staling) for production
 // - Figure out if we what prod and dev to be any different
+// - Somehow indicate if offline mode is properly installed
 let itemIds = [];
 let selectedItem = null;
 let selectedId = null;
