@@ -197,10 +197,11 @@ function deleteCurrentItem() {
     return;
   }
 
+  let deleteId = selectedId;
   selectItem(null);
-  let idx = itemIds.indexOf(selectedId);
+  let idx = itemIds.indexOf(deleteId);
   itemIds.splice(idx, 1);
-  localStorage.removeItem("item:" + selectedId);
+  localStorage.removeItem("item:" + deleteId);
   localStorage.setItem("items", JSON.stringify(itemIds));
   refreshItemList();
 }
